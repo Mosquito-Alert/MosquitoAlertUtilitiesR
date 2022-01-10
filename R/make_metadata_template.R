@@ -1,7 +1,7 @@
 library(jsonlite)
 
 
-make_metadata_template = function(type="Dataset", name="", description="", url="", same_as="", identifier="", license="", citation="", temporal_coverage = "", creator = "", variable_info, distribution) {
+make_metadata_template = function(type="Dataset", name="", description="", conditions_of_access="", url="", same_as="", identifier="", license="", citation="", temporal_coverage = "", creator = "", variable_info, distribution) {
   
   result = parse_json(paste0('{
 "@context": {
@@ -12,6 +12,7 @@ make_metadata_template = function(type="Dataset", name="", description="", url="
   "@type": "', type, '",
   "name": "', name, '",
   "description": "', description, '",
+  "conditionsOfAccess": "', conditions_of_access, '",
   "url": "', url, '",
   "sameAs": "', same_as, '",
   "identifier": "', identifier, '",
