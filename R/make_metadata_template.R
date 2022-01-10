@@ -1,3 +1,6 @@
+library(jsonlite)
+
+
 make_metadata_template = function(type="Dataset", name="", description="", url="", same_as="", identifier="", license="", citation="", temporal_coverage = "", creator = "", variable_info, distribution) {
   
   result = parse_json(paste0('{
