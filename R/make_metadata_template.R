@@ -1,7 +1,7 @@
 library(jsonlite)
 
 
-make_metadata_template = function(type="Dataset", name="", description="", conditions_of_access="", url="", same_as="", identifier="", license="", citation="", temporal_coverage = "", creator = "", variable_info, distribution) {
+make_metadata_template = function(type="Dataset", name="", description="", conditions_of_access="", url="", same_as="", identifier="", license="", citation="", measurement_technique = "", temporal_coverage = "", creator = "", variable_info, distribution) {
   
   result = parse_json(paste0('{
 "@context": {
@@ -22,9 +22,7 @@ make_metadata_template = function(type="Dataset", name="", description="", condi
   ],
   "creator": [],
 "variableMeasured": [],
-"measurementTechnique": [
-    "Mobile application for citizen science"
-  ],
+"measurementTechnique": "', measurement_technique, '",
   "temporalCoverage": "', temporal_coverage, '",
   "distribution": []
 }'))
